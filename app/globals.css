@@ -2,32 +2,261 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 222.2 84% 4.9%;
+
+        --card: 0 0% 100%;
+        --card-foreground: 222.2 84% 4.9%;
+
+        --popover: 0 0% 100%;
+        --popover-foreground: 222.2 84% 4.9%;
+
+        --primary: 222.2 47.4% 11.2%;
+        --primary-foreground: 210 40% 98%;
+
+        --secondary: 210 40% 96.1%;
+        --secondary-foreground: 222.2 47.4% 11.2%;
+
+        --muted: 210 40% 96.1%;
+        --muted-foreground: 215.4 16.3% 46.9%;
+
+        --accent: 210 40% 96.1%;
+        --accent-foreground: 222.2 47.4% 11.2%;
+
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 210 40% 98%;
+
+        --border: 214.3 31.8% 91.4%;
+        --input: 214.3 31.8% 91.4%;
+        --ring: 222.2 84% 4.9%;
+
+        --radius: 0.5rem;
+    }
+
+    .dark {
+        --background: 222.2 84% 4.9%;
+        --foreground: 210 40% 98%;
+
+        --card: 222.2 84% 4.9%;
+        --card-foreground: 210 40% 98%;
+
+        --popover: 222.2 84% 4.9%;
+        --popover-foreground: 210 40% 98%;
+
+        --primary: 210 40% 98%;
+        --primary-foreground: 222.2 47.4% 11.2%;
+
+        --secondary: 217.2 32.6% 17.5%;
+        --secondary-foreground: 210 40% 98%;
+
+        --muted: 217.2 32.6% 17.5%;
+        --muted-foreground: 215 20.2% 65.1%;
+
+        --accent: 217.2 32.6% 17.5%;
+        --accent-foreground: 210 40% 98%;
+
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 210 40% 98%;
+
+        --border: 217.2 32.6% 17.5%;
+        --input: 217.2 32.6% 17.5%;
+        --ring: 212.7 26.8% 83.9%;
+
+        --brand-bg-primary: #141414;
+        --brand-bg-secondary: #232324;
+        --brand-bg-tertiary: #202021;
+        --brand-bg-modal: #303030;
+        --brand-bg-accent: #0047BB;
+        --brand-bg-success: #2E7D32;
+        --brand-bg-error: #D32F2F;
+
+        --brand-primary: #E1E3E6;
+        --brand-secondary: #B0B1B6;
+        --brand-tertiary: #76787A;
+        --brand-accent: #0047BB;
+        --brand-success: #2E7D32;
+        --brand-error: #D32F2F;
+
+        --brand-icons-primary: #E1E3E6;
+        --brand-icons-secondary: #B0B1B6;
+        --brand-icons-tertiary: #76787A;
+        --brand-icons-accent: #0047BB;
+        --brand-icons-success: #2E7D32;
+        --brand-icons-error: #D32F2F;
+
+        --brand-border-primary: #363738;
+        --brand-border-accent: #0047BB;
+        --brand-border-success: #2E7D32;
+        --brand-border-error: #D32F2F;
+
+        --brand-state-accent-disabled: #424242;
+        --brand-state-blue-hover: #003182;
+        --brand-state-blue-focused: #4C7ECF;
+        --brand-state-blue-focused-transparent-first: rgba(0, 71, 187, 0.10);
+        --brand-state-blue-focused-transparent-second: rgba(0, 71, 187, 0.50);
+        --brand-state-error-hover: #C62828;
+        --brand-state-error-focused: #E06D6D;
+        --brand-state-error-focused-transparent-first: rgba(211, 47, 47, 0.10);
+        --brand-state-error-focused-transparent-second: rgba(211, 47, 47, 0.50);
+        --brand-state-success-hover: #1B5E20;
+        --brand-state-success-focused: #6CA46F;
+        --brand-state-success-focused-transparent-first: rgba(46, 125, 50, 0.10);
+        --brand-state-success-focused-transparent-second: rgba(46, 125, 50, 0.50);
+        --brand-state-contrast-hover: #FFFFFF;
+        --brand-state-contrast-focused: rgba(255, 255, 255, 0.12);
+
+        --brand-brand-blue: #0047BB;
+        --brand-brand-dark-blue: #001A72;
+        --brand-brand-orange: #FA4616;
+        --brand-brand-white: #FFFFFF;
+        --brand-brand-black: #FFFFFF;
+
+        --user-activity-low: #3C9769;
+        --user-activity-mid: #D7C956;
+        --user-activity-high: #D79F56;
+        --user-activity-overheat: #D77556;
+    }
+
+    * {
+        @apply border-border;
+        /*Почему повторно влепил шрифт - next/font неправильно считывает poppins почему то, это 2 разных шрифта, скачивая его с гугла и с либы некста*/
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+    h1 {
+        @apply text-brand-heading-1 no-underline normal-case
+    }
+    h2 {
+        @apply text-brand-heading-2 no-underline normal-case
+    }
+    h3 {
+        @apply text-brand-heading-3 no-underline normal-case
+    }
+    h4 {
+        @apply text-brand-heading-4 no-underline normal-case
+    }
+    h5 {
+        @apply text-brand-heading-5 no-underline normal-case
+    }
+    h6 {
+        @apply text-brand-heading-6 no-underline normal-case
+    }
+    .custom-headline {
+        @apply text-brand-custom no-underline normal-case
+    }
+    .custom-headline-mobile {
+        @apply text-brand-custom-mobile no-underline normal-case
+    }
+
+    .container-secondary {
+        @apply rounded-xl bg-brand-bg-secondary p-[30px] px-4 lg:px-[30px]
+    }
+
+    .title-3 {
+        @apply text-brand-title-3 no-underline normal-case
+    }
+
+    .subtitle-1 {
+        @apply text-brand-subtitle-1 no-underline normal-case
+    }
+
+    .subtitle-2 {
+        @apply text-brand-subtitle-2 no-underline normal-case
+    }
+
+    .body-1 {
+        @apply text-brand-body-1 no-underline normal-case
+    }
+
+    .body-2 {
+        @apply text-brand-body-2 no-underline normal-case
+    }
+
+    .brand-button {
+        @apply text-brand-button no-underline uppercase
+    }
+
+    .brand-caption {
+        @apply text-brand-caption no-underline normal-case
+    }
+
+    .brand-overline {
+        @apply text-brand-overline no-underline uppercase
+    }
+    .avatar-160 {
+        @apply w-[160px] h-[160px];
+    }
+    .avatar-96 {
+        @apply w-[96px] h-[96px];
+    }
+    .avatar-88 {
+        @apply w-[88px] h-[88px];
+    }
+    .avatar-80 {
+        @apply w-[80px] h-[80px];
+    }
+    .avatar-72 {
+        @apply w-[72px] h-[72px];
+    }
+    .avatar-64 {
+        @apply w-[64px] h-[64px];
+    }
+    .avatar-56 {
+        @apply w-[56px] h-[56px];
+    }
+    .avatar-48 {
+        @apply w-[48px] h-[48px];
+    }
+    .avatar-40 {
+        @apply w-[40px] h-[40px];
+    }
+    .avatar-32 {
+        @apply w-[32px] h-[32px];
+    }
+    .avatar-24 {
+        @apply w-[24px] h-[24px];
+    }
+    .brand-input{
+        @apply h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50
+    }
+    /*.avatar-hover {*/
+    /*    @apply hover:bg-black/50*/
+    /*}*/
+    .no-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+:focus-visible {
+    outline: -webkit-focus-ring-color auto 0px;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+::-webkit-scrollbar-thumb {
+    background: rgba(17, 17, 17, 0.5);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-track {
+    background-color: #e9d8ec;
+    border: 5px solid #eeeeee;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
 }
