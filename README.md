@@ -1,3 +1,5 @@
+Test task from: https://www.figma.com/design/cc7kV9XLd1RqZAVvyPufpp/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5?node-id=11-107&t=PE3jbcAQoU0ggYG0-4
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
